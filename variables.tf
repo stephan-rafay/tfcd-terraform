@@ -15,6 +15,5 @@ variable "git_user" {
 
 variable "delete_action_value" {
   description = "git user for authentication"
-  sensitive   = true
   default = "none"
 }

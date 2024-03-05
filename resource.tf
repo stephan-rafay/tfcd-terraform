@@ -1,4 +1,4 @@
-resource "rafay_workload_cd_operator" "operator-demo" {
+resource "rafay_workload_cd_operator" "operatordemo" {
   metadata {
     name    = "operator-demo"
     project = "benny"
@@ -14,13 +14,12 @@ resource "rafay_workload_cd_operator" "operator-demo" {
 
     path_match_pattern = "/:project/:namespace/:workload"
     base_path = "common"
-    //cluster_names = "bb6"
     placement_labels = {
       "owner" = "myteam"
     }
 
     include_base_value = true
-    #delete_action = "delete"
+    delete_action = var.delete_action_value
 
   }
   always_run = "${timestamp()}"
